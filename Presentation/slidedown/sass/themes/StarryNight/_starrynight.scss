@@ -24,38 +24,38 @@ html { overflow-y: scroll; }
 	}
 }
 
-#background {
-	background: black url(#{$IMG}/background.png) repeat 5% 5%;
+.ground {
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 100;
-	
+
 	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 600s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
+}
+
+#background {
+	@extend .ground;
+
+	background: black url(#{$IMG}/background.png) repeat 5% 5%;
+	z-index: 100;
+	
+	-webkit-animation-duration: 600s;
 }
 
 #midground {
+	@extend .ground;
+
 	background: url(#{$IMG}/midground.png) repeat 20% 20%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 200;
 	
-	-webkit-animation-name: STAR-MOVE;
 	-webkit-animation-duration: 450s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
 }
 
 #foreground {
+	@extend .ground;
+
 	background: url(#{$IMG}/foreground.png) repeat 35% 35%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 300;
 	
-	-webkit-animation-name: STAR-MOVE;
 	-webkit-animation-duration: 300s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
 }
