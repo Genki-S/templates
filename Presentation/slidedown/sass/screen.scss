@@ -6,4 +6,9 @@
 @import "compass/reset";
 
 /* import my theme here */
+@import "themes/StarryNight/starrynight";
+
+/* Blueprint settings */
+$blueprint-font-size: 40px;
+$font-color: #eee;
 @import "themes/bp/bp";
