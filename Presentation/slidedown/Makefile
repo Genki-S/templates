@@ -13,3 +13,10 @@ STYLESHEETS: $(SASSFILES)
 		mv $$f $${f%.css}.stylesheets; \
 	done
 
+# ==================================================
+# Theme Specifics
+# ==================================================
+starrynight: all
+	mv $(PRESENTATION) $(PRESENTATION)_
+	sed 's!<body>!&<div id="background"></div><div id="midground"></div><div id="foreground"></div>!' < $(PRESENTATION)_ > $(PRESENTATION)
+	rm $(PRESENTATION)_
