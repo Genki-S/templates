@@ -15,7 +15,7 @@ html { overflow-y: scroll; }
 	z-index: 500;
 }
 
-@-webkit-keyframes STAR-MOVE {
+@include keyframes("STAR-MOVE") {
 	from {
 		background-position: 5% 5%;
 	}
@@ -28,9 +28,9 @@ html { overflow-y: scroll; }
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
 
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
+	@include animation-name("STAR-MOVE");
+	@include animation-timing-function(linear);
+	@include animation-iteration-count(infinite);
 }
 
 #background {
@@ -39,7 +39,7 @@ html { overflow-y: scroll; }
 	background: black url(#{$IMG}/background.png) repeat 5% 5%;
 	z-index: 100;
 	
-	-webkit-animation-duration: 600s;
+	@include animation-duration(600s);
 }
 
 #midground {
@@ -48,7 +48,7 @@ html { overflow-y: scroll; }
 	background: url(#{$IMG}/midground.png) repeat 20% 20%;
 	z-index: 200;
 	
-	-webkit-animation-duration: 450s;
+	@include animation-duration(450s);
 }
 
 #foreground {
@@ -57,5 +57,5 @@ html { overflow-y: scroll; }
 	background: url(#{$IMG}/foreground.png) repeat 35% 35%;
 	z-index: 300;
 	
-	-webkit-animation-duration: 300s;
+	@include animation-duration(300s);
 }
