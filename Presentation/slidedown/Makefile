@@ -5,7 +5,9 @@ SASSFILES = $(wildcard sass/*.scss)
 all: STYLESHEETS $(PRESENTATION)
 
 $(PRESENTATION): $(MARKDOWN)
-	slidedown $< > $@
+	slidedown $< > $@_
+	sed 's!<head>$$!&<meta charset="utf-8" />!' < $@_ > $@
+	rm $@_
 
 STYLESHEETS: $(SASSFILES)
 	compass compile
