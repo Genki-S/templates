@@ -1,3 +1,6 @@
 [submodule "Presentation/reveal/reveal"]
 	path = Presentation/reveal/reveal
 	url = git://github.com/hakimel/reveal.js.git
+[submodule "LaTeX/texmf/tex/latex/peg-multimarkdown-latex-support"]
+	path = LaTeX/texmf/tex/latex/peg-multimarkdown-latex-support
+	url = git://github.com/fletcher/peg-multimarkdown-latex-support.git
