@@ -9,6 +9,10 @@
 \usepackage{listings} % Required for insertion of code
 \usepackage[square,sort&compress]{natbib} % Better bibliography support
 \bibpunct{[}{]}{;}{n}{}{,} % Citation style for natbib
+\ifx\margin\undefined
+\else
+	\usepackage[margin=\margin]{geometry}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	CODE INCLUSION CONFIGURATION
