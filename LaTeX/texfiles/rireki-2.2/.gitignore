@@ -1,6 +1,10 @@
 *.pdf
-rireki.tex
+resume.tex
 
 *.aux
 *.dvi
 *.log
+*.lob
+*.loc
+*.lol
+*.fdb_latexmk
