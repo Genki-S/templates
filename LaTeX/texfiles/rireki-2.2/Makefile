@@ -23,15 +23,18 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
+PDF = rireki.pdf
 DVI = rireki.dvi
 
-all: $(DVI)
+all: $(PDF)
 
-rireki.dvi: rireki.tex rireki.sty
+$(PDF): $(DVI)
+	dvipdfmx $(DVI)
+$(DVI): rireki.tex rireki.sty
 	platex rireki
 view: $(DVI)
 	xdvi -s 3 $(DVI)
-print: rireki.dvi
+print: $(DVI)
 	lpr -d $(DVI)
 package: clean
 	dir=`pwd`; name=`basename $$dir`; cd ..; tar czvf $$name.tar.gz $$name
