@@ -9,7 +9,12 @@ else
 	ln -s $TEMPLATES_DIR/LaTeX/texmf $TEXMF
 fi
 
-if [ ! -e $HOME/bin/report-ja ]; then
-	ln -s $TEMPLATES_DIR/LaTeX/bin/report-ja.sh $HOME/bin/report-ja
-fi
-
+for f in $TEMPLATES_DIR/LaTeX/bin/*
+do
+	src=$f
+	dst=${f##*/}
+	dst=$HOME/bin/${dst%%.*}
+	if [ ! -e $dst ]; then
+		ln -s $src $dst
+	fi
+done
