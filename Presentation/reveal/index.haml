@@ -34,13 +34,26 @@
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        // Theme
+        theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+        // Transition style
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display a presentation progress bar
+        progress: true,
+        // Push each slide change to the browser history
+        history: false,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Loop the presentation
+        loop: false,
+        // Apply a 3D roll to links on hover
+        rollingLinks: true,
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
