@@ -11,6 +11,7 @@
     %meta(content="black-translucent" name="apple-mobile-web-app-status-bar-style")/
     %link(href="reveal/css/reveal.min.css" rel="stylesheet")/
     %link#theme(href="reveal/css/theme/default.css" rel="stylesheet")/
+    %link(href="css/screen.css" rel="stylesheet")/
     / For syntax highlighting
     %link(href="reveal/lib/css/zenburn.css" rel="stylesheet")/
     / If the query includes 'print-pdf', use the PDF print sheet
@@ -35,7 +36,7 @@
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Theme
-        theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+        // theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
         // Transition style
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
         // Display controls in the bottom right corner
@@ -49,7 +50,7 @@
         // Enable the slide overview mode
         overview: true,
         // Vertical centering of slides
-        center: true,
+        center: false,
         // Loop the presentation
         loop: false,
         // Apply a 3D roll to links on hover
