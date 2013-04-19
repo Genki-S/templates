@@ -1,0 +1,164 @@
+%section
+  :markdown
+    # Vimエディタ上でのキー入力解析による入力短縮化方法の学習を支援するツールの構築
+
+    杉本 元気　　坂本 一憲　　鷲崎 弘宜　　深沢 良彰
+
+/ %section
+/   :markdown
+/     ## Outline
+/
+/     * 背景
+/     * 現状の問題点
+/     * 研究目的
+/     * Research Questions
+/     * 研究方法
+/     * 研究結果
+/     * まとめと今後の展望
+
+背景
+現状の問題点
+研究目的
+Research Questions
+研究方法
+研究結果
+まとめと今後の展望
+
+%section
+  %h2 背景
+
+  %h3.fragment 開発効率を上げるには？
+  %p.fragment プログラミング効率向上のためのエディタを使用する
+  %p.fragment -> 使用方法を学ぶ必要がある
+
+  %h4.fragment Vim
+  %p.fragment
+    "Vim is an <em class="fragment highlight-red">advanced</em> text editor that seeks to provide the power of the de-facto Unix editor 'Vi', with a <em class="fragment highlight-red">more complete feature set</em>."
+
+  %h4.fragment Emacs
+  %p.fragment
+    "GNU Emacs is an <em class="fragment highlight-red">extensible</em>, <em class="fragment highlight-red">customizable</em> text editor — <em class="fragment highlight-red">and more</em>."
+
+%section
+  %h2 現状の問題点
+  %h3.fragment どうやって「学ぶ」か
+  %ul
+    %li.fragment
+      チュートリアル
+      %ul
+        %li.fragment 初心者 -> 中級者
+  %h3.fragment 中級者 -> 上級者は？
+
+%section
+  %h2 現状の問題点
+  %h3.fragment Seven habits of effective text editing 2.0 [Bram]
+  %ul
+    %li.fragment "Detect inefficiency"
+    %li.fragment "Find a quicker way"
+    %li.fragment "Make it a habit"
+
+  %h3.fragment How to "Detect inefficiency" ?
+  %p.fragment 効果的な学習手法が存在しない！
+
+%section
+  %h2 研究目的
+  %h3.fragment テキストエディタの上達を促進する
+  %ul
+    %li.fragment チュートリアルの一歩先
+    %li.fragment 中級者 -> 上級者への近道
+
+  %h3.fragment 期待される効果
+  %ul
+    %li.fragment プログラミング効率の向上
+    %li.fragment プログラミング品質の向上
+
+%section
+  %section
+    %h2 Research Questions
+    %h3 目的: テキストエディタの上達を促進する
+
+    %h1.fragment.fade-in
+      %span.fragment.fade-out コンセプト
+    %h1.fragment.fade-in 頻出パターン
+
+  %section
+    %h2 Research Questions
+    %h3 目的: テキストエディタの上達を促進する
+
+    %h3.fragment RQ1
+    %h4.fragment エディタ操作に頻出パターンが存在するか？
+    %p.fragment 頻出パターンを改善 -> 改善効果が高い
+
+    %h3.fragment RQ2
+    %h4.fragment 頻出パターンの把握により、そのパターンを削減するようにコーディングスタイルを変更可能か？
+    %p.fragment 頻出パターンを把握することに価値があるか？
+
+%section
+  %section
+    %h2 研究方法
+    %ul
+      %li.fragment キー入力のログデータを利用
+      %li.fragment Vimを対象とした gem を作成
+
+  %section
+    %img.fragment(src="img/vimentor_design.png")
+
+%section
+  %section
+    %h2 研究方法
+    %ul
+      %li.fragment 1ヶ月間のキー入力を保存
+      %li.fragment キー入力を解析
+      %li.fragment 結果を確認し、改善を試みる
+
+  %section
+    %h2 キー入力解析アルゴリズム
+    %h1.fragment COMING SOON!
+
+%section
+  %section
+    %h2 研究結果 (キー入力解析)
+    %img.fragment(src="img/graph.png")
+
+  %section
+    %h2 研究結果 (キー入力解析)
+    %h3.fragment RQ1への答え
+
+    %p.fragment エディタ操作に頻出パターンが存在するか？
+    %p.fragment A. 頻出パターンは存在する
+
+%section
+  %section
+    %h2 研究結果 (改善効果)
+    %h3.fragment 結果の解析
+    %p.fragment 頻出パターンは「:w」
+    %p.fragment 　-> 必要過多なセーブ
+
+    %h3.fragment 改善方法を試行
+    %p.fragment 自動バックアップの設定を行い、セーブの頻度を減らす
+
+  %section
+    %h2 研究結果 (改善効果)
+    %img.fragment(src="img/improvement_graph.png")
+
+  %section
+    %h2 比較
+    %img.fragment(src="img/graph_comparison.png")
+
+  %section
+    %h2 研究結果 (改善効果)
+    %h3.fragment RQ2への答え
+
+    %p.fragment 頻出パターンの把握により、そのパターンを削減するようにコーディングスタイルを変更可能か？
+    %p.fragment A. 変更可能である
+
+%section
+  %h2 まとめと今後の展望
+  %h3.fragment まとめ
+  %p.fragment キー入力のログの解析、提示はエディタ学習に有用
+
+  %h3.fragment 今後の展望
+  %ul.fragment
+    %li 習熟度の数値化、定量的測定
+    %li 時間的要素の導入
+    %li など
