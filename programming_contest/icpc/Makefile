@@ -10,7 +10,7 @@ EXE=a.out
 
 .PHONY: all build exec test clean cleanest
 
-all: build exec test
+all: build exec test clean
 
 build: $(EXE)
 
@@ -25,10 +25,8 @@ exec:
 	@ ./$(EXE) < in.txt > out.txt
 
 test:
-# Suppress error by "|| true"
 	@ echo "Running test..."
-	@ diff out.txt ans.txt > /dev/null || true
-	@ if [[ $$? -ne 0 ]] ; then echo "WA" ; else echo "AC!" ; fi
+	@ diff out.txt ans.txt > /dev/null && echo "\033[32mAC!\033[0m" || echo "\033[31mWA\033[0m"
 
 clean:
 	rm -f $(OBJECTS)
