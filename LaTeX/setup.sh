@@ -2,7 +2,13 @@
 
 TEMPLATES_DIR=$HOME/templates
 
-TEXMF=$HOME/texmf
+case $PLATFORM in
+	linux)
+		TEXMF=$HOME/texmf ;;
+	mac)
+		TEXMF=~/Library/texmf ;;
+esac
+
 if [ -e $TEXMF ]; then
 	echo "$TEXMF exists"
 else
