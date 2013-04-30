@@ -68,8 +68,8 @@ typedef complex<double> P;
 #define EACH(c,it) for(__typeof((c).begin()) it=(c).begin(); it!=(c).end(); ++it)
 #define EXIST(s,e) ((s).find(e)!=(s).end())
 
-#define BIT(n) (1ULL << (n))
-#define BITOF(n, m) ((ULL)(n) >> (m) & 1)
+#define BIT(n) (assert(n < 64), (1ULL << (n)))
+#define BITOF(n, m) (assert(m < 64), ((ULL)(n) >> (m) & 1))
 
 #define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
 
