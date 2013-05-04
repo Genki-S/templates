@@ -4,13 +4,13 @@ LDFLAGS=-g
 # LOADLIBS=-lefence
 LOADLIBS=
 
-SOURCES=solve.cpp
+SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXE=a.out
 
 .PHONY: all build exec test clean cleanest
 
-all: build exec test clean
+all: build exec test
 
 build: $(EXE)
 
@@ -18,15 +18,23 @@ $(EXE): $(OBJECTS)
 	$(CC) $(LOADLIBS) $(OBJECTS) -o $@
 
 %.o: %.cpp
-	$(CC) -c $(WARNCPPFLAGS) $(LDFLAGS) $< -o $@
+	$(CC) -c $(LDFLAGS) $(WARNCPPFLAGS) $< -o $@
 
 exec:
 	@ echo "Executing program..."
-	@ ./$(EXE) < in.txt > out.txt
+	@ mkdir -p out
+	@ for f in in/* ; do \
+		./$(EXE) < $$f > $${f/in/out}; \
+	done
 
 test:
 	@ echo "Running test..."
-	@ diff out.txt ans.txt > /dev/null && echo "\033[32mAC!\033[0m" || echo "\033[31mWA\033[0m"
+	@ for f in out/*; do \
+		echo "\n$$f"; \
+		diff $$f $${f/out/ans} > /dev/null \
+			&& echo "\033[32mAC!\033[0m" \
+			|| echo "\033[31mWA\033[0m"; \
+	done
 
 clean:
 	rm -f $(OBJECTS)
