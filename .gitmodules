@@ -4,3 +4,6 @@
 [submodule "LaTeX/texmf/tex/latex/peg-multimarkdown-latex-support"]
 	path = LaTeX/texmf/tex/latex/peg-multimarkdown-latex-support
 	url = git://github.com/fletcher/peg-multimarkdown-latex-support.git
+[submodule "programming_contest/ojh"]
+	path = programming_contest/ojh
+	url = https://github.com/nodchip/OnlineJudgeHelper.git
