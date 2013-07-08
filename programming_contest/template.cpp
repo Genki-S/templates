@@ -41,7 +41,6 @@ typedef vector<char> VC;
 typedef vector<VC> VVC;
 typedef vector<string> VS;
 typedef pair<int, int> PII;
-typedef complex<double> P;
 
 #define FOR(i, b, e) for (typeof(e) i = (b); i != (e); i < (e)? ++i : --i)
 #define REP(i, n) FOR(i, 0, n)
@@ -117,17 +116,21 @@ inline VS split(string s, char delimiter) { VS v; string t; REP(i, s.length()) {
 template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1, T2>& d) {return s << "(" << d.first << ", " << d.second << ")";}
 
 /* Frequent stuffs */
-int n_dir = 4;
-int dx[] = {0, 1, 0, -1}, dy[] = {-1, 0, 1, 0}; /* CSS order */
-enum direction {
-	UP, RIGHT, DOWN, LEFT
-};
+// int n_dir = 4;
+// int dx[] = {0, 1, 0, -1}, dy[] = {-1, 0, 1, 0}; [> CSS order <]
+// enum direction {
+	// UP, RIGHT, DOWN, LEFT
+// };
 // int n_dir = 8;
 // int dx[] = {0, 1, 1, 1, 0, -1, -1, -1}, dy[] = {-1, -1, 0, 1, 1, 1, 0, -1};
 // enum direction {
 	// UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT
 // }
 #define FORDIR(d) REP (d, n_dir)
+
+typedef complex<int> P;
+#define Y real()
+#define X imag()
 
 /*}}}*/
 
