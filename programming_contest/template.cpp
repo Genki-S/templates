@@ -40,6 +40,7 @@ typedef vector<VB> VVB;
 typedef vector<char> VC;
 typedef vector<VC> VVC;
 typedef vector<string> VS;
+typedef vector<VS> VVS;
 typedef pair<int, int> PII;
 
 #define FOR(i, b, e) for (typeof(e) i = (b); i != (e); i < (e)? ++i : --i)
@@ -126,11 +127,17 @@ template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1
 // enum direction {
 	// UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT
 // }
-#define FORDIR(d) REP (d, n_dir)
+// #define FORDIR(d) REP (d, n_dir)
 
 typedef complex<int> P;
 #define Y real()
 #define X imag()
+P dyx[4] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1) };
+// P dyx[8] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1), P(-1, 1), P(1, 1), P(1, -1), P(-1, -1) };
+
+bool in_field(P p, int height, int width) {
+	return (0 <= p.Y && p.Y < height) && (0 <= p.X && p.X < width);
+}
 
 /*}}}*/
 
