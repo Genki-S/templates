@@ -126,7 +126,7 @@ template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1
 // int dx[] = {0, 1, 1, 1, 0, -1, -1, -1}, dy[] = {-1, -1, 0, 1, 1, 1, 0, -1};
 // enum direction {
 	// UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT
-// }
+// };
 // #define FORDIR(d) REP (d, n_dir)
 
 typedef complex<int> P;
@@ -135,8 +135,9 @@ typedef complex<int> P;
 P dyx[4] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1) };
 // P dyx[8] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1), P(-1, 1), P(1, 1), P(1, -1), P(-1, -1) };
 
-bool in_field(P p, int height, int width) {
-	return (0 <= p.Y && p.Y < height) && (0 <= p.X && p.X < width);
+int g_height, g_width;
+bool in_field(P p) {
+	return (0 <= p.Y && p.Y < g_height) && (0 <= p.X && p.X < g_width);
 }
 
 /*}}}*/
