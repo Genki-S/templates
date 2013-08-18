@@ -40,4 +40,4 @@ clean:
 	rm -f $(OBJECTS)
 
 cleanest: clean
-	rm -f $(EXE) out.txt
+	rm -f $(EXE)
